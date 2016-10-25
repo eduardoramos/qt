@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11542" systemVersion="16A319" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                    <items>
+                        <group width="1" alignment="left" id="U2p-Um-5Rc">
+                            <items>
+                                <dateLabel width="136" height="43.5" alignment="left" id="6DQ-o7-OsW">
+                                    <color key="textColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <dateFormatterStyle key="dateStyle" short="YES"/>
+                                    <dateFormatterStyle key="timeStyle" short="YES"/>
+                                </dateLabel>
+                            </items>
+                        </group>
+                        <group width="1" height="41" alignment="left" id="hQf-oZ-ioN">
+                            <items>
+                                <group width="1" height="59" alignment="left" id="2rr-Vb-a4C" userLabel="Card Group">
+                                    <items>
+                                        <label width="136" height="40" alignment="center" verticalAlignment="bottom" text="Pay Period" textAlignment="center" baselineAdjustment="alignCenters" numberOfLines="0" id="W7R-i9-FEp" userLabel="Payperiod Label">
+                                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                        </label>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                        <group width="135" height="32" alignment="left" verticalAlignment="center" contentMode="scaleAspectFit" layout="vertical" id="a1h-8H-cve">
+                            <items>
+                                <label width="136" alignment="center" verticalAlignment="bottom" text="Date" textAlignment="center" numberOfLines="0" id="BgS-wW-70L" userLabel="Date Label">
+                                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="cardGroup" destination="2rr-Vb-a4C" id="lwL-Vc-eok"/>
+                        <outlet property="dateLabel" destination="BgS-wW-70L" id="K7A-23-vjh"/>
+                        <outlet property="payperiodLabel" destination="W7R-i9-FEp" id="Kpd-A8-Sy1"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="163" y="199"/>
+        </scene>
+    </scenes>
+</document>
