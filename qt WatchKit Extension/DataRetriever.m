@@ -39,8 +39,8 @@ static DataRetriever* _sharedDataRetriever = nil;
     NSDateComponents *fourteenDaysFromTodayComponents = [[NSDateComponents alloc]init];
     fourteenDaysFromTodayComponents.day = 14;
     NSDate *fourteenDaysFromToday = [cal dateByAddingComponents:fourteenDaysFromTodayComponents
-                                                   toDate:[NSDate date]
-                                                  options:0];
+                                                         toDate:[NSDate date]
+                                                        options:0];
     
     //Create the end date component
     NSPredicate *predicate = [self.store predicateForEventsWithStartDate:today endDate:fourteenDaysFromToday calendars:nil];
@@ -50,7 +50,7 @@ static DataRetriever* _sharedDataRetriever = nil;
     NSLog(@"Retrieved %lu events: %@ to %@",(unsigned long)events.count,fourteenDaysFromToday, today);
     
     for (EKEvent*event in events) {
-        NSLog(@"Event %@",event.title);
+        //NSLog(@"Event %@",event.title);
         if ([event.title containsString:@"PP#"]) {
             NSLog(@"Found %@",event.title);
             [self setPayperiodText:event.title];
@@ -70,6 +70,15 @@ static DataRetriever* _sharedDataRetriever = nil;
             else
                 week=1;
             
+            if (components.day<3 || components.day>10) {
+                [self setBackgroundColor:[UIColor yellowColor]];
+                [self setTextColor:[UIColor blackColor]];
+                
+            } else {
+                [self setBackgroundColor:[UIColor blueColor]];
+                [self setTextColor:[UIColor whiteColor]];
+            }
+            
             NSDateFormatter* day = [[NSDateFormatter alloc] init];
             [day setDateFormat: @"EEEE"];
             NSLog(@"the day is: %@", [day stringFromDate:[NSDate date]]);
@@ -85,10 +94,10 @@ static DataRetriever* _sharedDataRetriever = nil;
             
             NSString*theText = [NSString stringWithFormat:@"%@%@%li",
                                 shortPP,
-                                @"WK",
+                                shortDay,
                                 (long)week];
             [self setText:theText];
-    
+            
         }
     }
     [[NSNotificationCenter defaultCenter] postNotificationName:@"EventsUpdated" object:self];
@@ -102,17 +111,17 @@ static DataRetriever* _sharedDataRetriever = nil;
     NSCalendar *cal = [NSCalendar currentCalendar];
     
     NSString * myString;
-
+    
     [self setBackgroundColor:[UIColor blueColor]];
     [self setTextColor:[UIColor whiteColor]];
-
+    
     self.text = @"text";
     myString = @"myString";
     
     myString = [NSString stringWithFormat:@"%@",myString];
     
     [self setCardText:myString];
-
+    
     [self.store reset];
     
     if (!self.isAccessToEventStoreGranted)
@@ -122,7 +131,7 @@ static DataRetriever* _sharedDataRetriever = nil;
     }
     
     EKAuthorizationStatus authorizationStatus = [EKEventStore authorizationStatusForEntityType:EKEntityTypeEvent];
-
+    
     switch (authorizationStatus) {
         case EKAuthorizationStatusDenied:
         case EKAuthorizationStatusRestricted:
@@ -149,7 +158,7 @@ static DataRetriever* _sharedDataRetriever = nil;
                                                    [self accessToCalendarGrantedWithCalendar:cal];
                                                }
                                            });
-
+                                           
                                        }];
     }
 }
