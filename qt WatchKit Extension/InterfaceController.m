@@ -51,6 +51,7 @@
     
     [self.payperiodLabel setText:self.retriever.payperiodText];
     [self.dateLabel setText:self.retriever.dateText];
+    [self.dateLabel setTextColor:self.retriever.textColor];
 }
 
 - (void)didDeactivate {
