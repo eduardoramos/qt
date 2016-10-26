@@ -22,23 +22,19 @@
                                 </dateLabel>
                             </items>
                         </group>
-                        <group width="1" height="41" alignment="left" id="hQf-oZ-ioN">
+                        <group width="1" height="100" alignment="left" id="hQf-oZ-ioN">
                             <items>
-                                <group width="1" height="59" alignment="left" id="2rr-Vb-a4C" userLabel="Card Group">
+                                <group width="1" height="88" alignment="left" layout="vertical" id="2rr-Vb-a4C" userLabel="Card Group">
                                     <items>
-                                        <label width="136" height="40" alignment="center" verticalAlignment="bottom" text="Pay Period" textAlignment="center" baselineAdjustment="alignCenters" numberOfLines="0" id="W7R-i9-FEp" userLabel="Payperiod Label">
+                                        <label width="136" height="35" alignment="center" verticalAlignment="center" text="Pay Period" textAlignment="center" baselineAdjustment="alignCenters" numberOfLines="0" id="W7R-i9-FEp" userLabel="Payperiod Label">
                                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                        </label>
+                                        <label width="136" alignment="center" verticalAlignment="center" text="Date" textAlignment="center" numberOfLines="0" id="BgS-wW-70L" userLabel="Date Label">
+                                            <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                         </label>
                                     </items>
                                 </group>
-                            </items>
-                        </group>
-                        <group width="135" height="32" alignment="left" verticalAlignment="center" contentMode="scaleAspectFit" layout="vertical" id="a1h-8H-cve">
-                            <items>
-                                <label width="136" alignment="center" verticalAlignment="bottom" text="Date" textAlignment="center" numberOfLines="0" id="BgS-wW-70L" userLabel="Date Label">
-                                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
-                                </label>
                             </items>
                         </group>
                     </items>
