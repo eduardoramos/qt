@@ -50,6 +50,8 @@
     [self.cardLabel setText:self.retriever.cardText];
     
     [self.payperiodLabel setText:self.retriever.payperiodText];
+    [self.payperiodLabel setTextColor:self.retriever.textColor];
+
     [self.dateLabel setText:self.retriever.dateText];
     [self.dateLabel setTextColor:self.retriever.textColor];
 }

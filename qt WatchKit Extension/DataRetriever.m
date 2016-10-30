@@ -71,8 +71,8 @@ static DataRetriever* _sharedDataRetriever = nil;
                 week=1;
             
             if (components.day<3 || components.day>10) {
-                [self setBackgroundColor:[UIColor yellowColor]];
-                [self setTextColor:[UIColor blackColor]];
+                [self setBackgroundColor:[UIColor orangeColor]];
+                [self setTextColor:[UIColor whiteColor]];
                 
             } else {
                 [self setBackgroundColor:[UIColor blueColor]];
