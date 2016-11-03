@@ -69,8 +69,8 @@ static DataRetriever* _sharedDataRetriever = nil;
                 week=2;
             else
                 week=1;
-            
-            if (components.day<3 || components.day>10) {
+            NSLog(@"%li",(long)components.day);
+            if (components.day<3 || components.day>9) {
                 [self setBackgroundColor:[UIColor orangeColor]];
                 [self setTextColor:[UIColor whiteColor]];
                 
