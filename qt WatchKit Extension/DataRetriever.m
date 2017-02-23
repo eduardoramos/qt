@@ -92,10 +92,9 @@ static DataRetriever* _sharedDataRetriever = nil;
             NSString *shortDay = [day stringFromDate:[NSDate date]];
             NSLog(@"the short day is: %@", shortDay);
             
-            NSString*theText = [NSString stringWithFormat:@"%@%@%li",
-                                shortPP,
-                                shortDay,
+            NSString*theText = [NSString stringWithFormat:@"WEEK%li",
                                 (long)week];
+            NSLog(@"theText %@",theText);
             [self setText:theText];
             
         }
