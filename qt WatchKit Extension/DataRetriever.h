@@ -22,6 +22,7 @@
 @property (strong, nonatomic) NSString *dateText;
 @property (strong, nonatomic) NSString *text;
 @property (strong, nonatomic) NSString *shortText;
+@property (nonatomic, retain) NSArray  *payperiodsArray;
 
 
 - (void)updateData;
