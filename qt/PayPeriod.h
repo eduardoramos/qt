@@ -13,7 +13,6 @@
     NSInteger   summYear;
     NSInteger   summPP;
     NSInteger   leavyear;
-    NSDate*     startDate;
 }
 
 @property (readwrite) NSInteger summstartOffset;
