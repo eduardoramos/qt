@@ -171,14 +171,15 @@ static DataRetriever* _sharedDataRetriever = nil;
     // Locate the pay period in the embedded array of pay periods
     
     for (PayPeriod*pp in self.payperiodsArray) {
-        if (offsetToday <= pp.summstartOffset) {
+        NSLog(@"Comparing %ld v.s. %ld",(long)offsetToday, (long)pp.summstartOffset+14);
+        if (offsetToday <= pp.summstartOffset+14) {
             NSString* pptitle = [NSString stringWithFormat:@"PP %ld-%ld",(long)pp.summYear, (long)pp.summPP];
 
             [self setPayperiodText:pptitle];
             
             NSString *shortPP;
             shortPP = [NSString stringWithFormat:@"%ld-%ld",(long)pp.summYear, (long)pp.summPP];
-            
+
             NSUInteger unitFlags = NSCalendarUnitDay;
             NSCalendar *gregorian = [[NSCalendar alloc]
                                      initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
