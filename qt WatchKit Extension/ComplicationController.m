@@ -54,6 +54,7 @@
 
 #pragma mark - Timeline Population
 
+
 - (void)getCurrentTimelineEntryForComplication:(CLKComplication *)complication withHandler:(void(^)(CLKComplicationTimelineEntry * __nullable))handler {
     // Call the handler with the current timeline entry
 
