@@ -40,123 +40,126 @@ static DataRetriever* _sharedDataRetriever = nil;
     self = [super init];
     /*
      SQL statement to retrieve array creation code:
-     
      select
-     '[[PayPeriod alloc] initWithSummstartOffset:'||to_char(p.summstart-13-to_date('01-JAN-2001'))
+     '[[PayPeriod alloc] initWithSummstartOffset:'||to_char(p.summstart-to_date('01-JAN-2001'))
      || ' withSummYear:'||summyear||' withSummPP:'||summpp||' withLeavyear:'|| leavyear|| '],'
      from ppsumm p
      where summyear>=2017;
-     
-    */
+     */
     
     self.payperiodsArray =
-        [NSArray arrayWithObjects:
-         [[PayPeriod alloc] initWithSummstartOffset:5824 withSummYear:2017 withSummPP:1 withLeavyear:2016],
-         [[PayPeriod alloc] initWithSummstartOffset:5838 withSummYear:2017 withSummPP:2 withLeavyear:2016],
-         [[PayPeriod alloc] initWithSummstartOffset:5852 withSummYear:2017 withSummPP:3 withLeavyear:2017],
-         [[PayPeriod alloc] initWithSummstartOffset:5866 withSummYear:2017 withSummPP:4 withLeavyear:2017],
-         [[PayPeriod alloc] initWithSummstartOffset:5880 withSummYear:2017 withSummPP:5 withLeavyear:2017],
-         [[PayPeriod alloc] initWithSummstartOffset:5894 withSummYear:2017 withSummPP:6 withLeavyear:2017],
-         [[PayPeriod alloc] initWithSummstartOffset:5908 withSummYear:2017 withSummPP:7 withLeavyear:2017],
-         [[PayPeriod alloc] initWithSummstartOffset:5922 withSummYear:2017 withSummPP:8 withLeavyear:2017],
-         [[PayPeriod alloc] initWithSummstartOffset:5936 withSummYear:2017 withSummPP:9 withLeavyear:2017],
-         [[PayPeriod alloc] initWithSummstartOffset:5950 withSummYear:2017 withSummPP:10 withLeavyear:2017],
-         [[PayPeriod alloc] initWithSummstartOffset:5964 withSummYear:2017 withSummPP:11 withLeavyear:2017],
-         [[PayPeriod alloc] initWithSummstartOffset:5978 withSummYear:2017 withSummPP:12 withLeavyear:2017],
-         [[PayPeriod alloc] initWithSummstartOffset:5992 withSummYear:2017 withSummPP:13 withLeavyear:2017],
-         [[PayPeriod alloc] initWithSummstartOffset:6006 withSummYear:2017 withSummPP:14 withLeavyear:2017],
-         [[PayPeriod alloc] initWithSummstartOffset:6020 withSummYear:2017 withSummPP:15 withLeavyear:2017],
-         [[PayPeriod alloc] initWithSummstartOffset:6034 withSummYear:2017 withSummPP:16 withLeavyear:2017],
-         [[PayPeriod alloc] initWithSummstartOffset:6048 withSummYear:2017 withSummPP:17 withLeavyear:2017],
-         [[PayPeriod alloc] initWithSummstartOffset:6062 withSummYear:2017 withSummPP:18 withLeavyear:2017],
-         [[PayPeriod alloc] initWithSummstartOffset:6076 withSummYear:2017 withSummPP:19 withLeavyear:2017],
-         [[PayPeriod alloc] initWithSummstartOffset:6090 withSummYear:2017 withSummPP:20 withLeavyear:2017],
-         [[PayPeriod alloc] initWithSummstartOffset:6104 withSummYear:2017 withSummPP:21 withLeavyear:2017],
-         [[PayPeriod alloc] initWithSummstartOffset:6118 withSummYear:2017 withSummPP:22 withLeavyear:2017],
-         [[PayPeriod alloc] initWithSummstartOffset:6132 withSummYear:2017 withSummPP:23 withLeavyear:2017],
-         [[PayPeriod alloc] initWithSummstartOffset:6146 withSummYear:2017 withSummPP:24 withLeavyear:2017],
-         [[PayPeriod alloc] initWithSummstartOffset:6160 withSummYear:2017 withSummPP:25 withLeavyear:2017],
-         [[PayPeriod alloc] initWithSummstartOffset:6174 withSummYear:2017 withSummPP:26 withLeavyear:2017],
-         [[PayPeriod alloc] initWithSummstartOffset:6188 withSummYear:2018 withSummPP:1 withLeavyear:2017],
-         [[PayPeriod alloc] initWithSummstartOffset:6202 withSummYear:2018 withSummPP:2 withLeavyear:2017],
-         [[PayPeriod alloc] initWithSummstartOffset:6216 withSummYear:2018 withSummPP:3 withLeavyear:2018],
-         [[PayPeriod alloc] initWithSummstartOffset:6230 withSummYear:2018 withSummPP:4 withLeavyear:2018],
-         [[PayPeriod alloc] initWithSummstartOffset:6244 withSummYear:2018 withSummPP:5 withLeavyear:2018],
-         [[PayPeriod alloc] initWithSummstartOffset:6258 withSummYear:2018 withSummPP:6 withLeavyear:2018],
-         [[PayPeriod alloc] initWithSummstartOffset:6272 withSummYear:2018 withSummPP:7 withLeavyear:2018],
-         [[PayPeriod alloc] initWithSummstartOffset:6286 withSummYear:2018 withSummPP:8 withLeavyear:2018],
-         [[PayPeriod alloc] initWithSummstartOffset:6300 withSummYear:2018 withSummPP:9 withLeavyear:2018],
-         [[PayPeriod alloc] initWithSummstartOffset:6314 withSummYear:2018 withSummPP:10 withLeavyear:2018],
-         [[PayPeriod alloc] initWithSummstartOffset:6328 withSummYear:2018 withSummPP:11 withLeavyear:2018],
-         [[PayPeriod alloc] initWithSummstartOffset:6342 withSummYear:2018 withSummPP:12 withLeavyear:2018],
-         [[PayPeriod alloc] initWithSummstartOffset:6356 withSummYear:2018 withSummPP:13 withLeavyear:2018],
-         [[PayPeriod alloc] initWithSummstartOffset:6370 withSummYear:2018 withSummPP:14 withLeavyear:2018],
-         [[PayPeriod alloc] initWithSummstartOffset:6384 withSummYear:2018 withSummPP:15 withLeavyear:2018],
-         [[PayPeriod alloc] initWithSummstartOffset:6398 withSummYear:2018 withSummPP:16 withLeavyear:2018],
-         [[PayPeriod alloc] initWithSummstartOffset:6412 withSummYear:2018 withSummPP:17 withLeavyear:2018],
-         [[PayPeriod alloc] initWithSummstartOffset:6426 withSummYear:2018 withSummPP:18 withLeavyear:2018],
-         [[PayPeriod alloc] initWithSummstartOffset:6440 withSummYear:2018 withSummPP:19 withLeavyear:2018],
-         [[PayPeriod alloc] initWithSummstartOffset:6454 withSummYear:2018 withSummPP:20 withLeavyear:2018],
-         [[PayPeriod alloc] initWithSummstartOffset:6468 withSummYear:2018 withSummPP:21 withLeavyear:2018],
-         [[PayPeriod alloc] initWithSummstartOffset:6482 withSummYear:2018 withSummPP:22 withLeavyear:2018],
-         [[PayPeriod alloc] initWithSummstartOffset:6496 withSummYear:2018 withSummPP:23 withLeavyear:2018],
-         [[PayPeriod alloc] initWithSummstartOffset:6510 withSummYear:2018 withSummPP:24 withLeavyear:2018],
-         [[PayPeriod alloc] initWithSummstartOffset:6524 withSummYear:2018 withSummPP:25 withLeavyear:2018],
-         [[PayPeriod alloc] initWithSummstartOffset:6538 withSummYear:2018 withSummPP:26 withLeavyear:2018],
-         [[PayPeriod alloc] initWithSummstartOffset:6552 withSummYear:2018 withSummPP:27 withLeavyear:2018],
-         [[PayPeriod alloc] initWithSummstartOffset:6566 withSummYear:2019 withSummPP:1 withLeavyear:2018],
-         [[PayPeriod alloc] initWithSummstartOffset:6580 withSummYear:2019 withSummPP:2 withLeavyear:2019],
-         [[PayPeriod alloc] initWithSummstartOffset:6594 withSummYear:2019 withSummPP:3 withLeavyear:2019],
-         [[PayPeriod alloc] initWithSummstartOffset:6608 withSummYear:2019 withSummPP:4 withLeavyear:2019],
-         [[PayPeriod alloc] initWithSummstartOffset:6622 withSummYear:2019 withSummPP:5 withLeavyear:2019],
-         [[PayPeriod alloc] initWithSummstartOffset:6636 withSummYear:2019 withSummPP:6 withLeavyear:2019],
-         [[PayPeriod alloc] initWithSummstartOffset:6650 withSummYear:2019 withSummPP:7 withLeavyear:2019],
-         [[PayPeriod alloc] initWithSummstartOffset:6664 withSummYear:2019 withSummPP:8 withLeavyear:2019],
-         [[PayPeriod alloc] initWithSummstartOffset:6678 withSummYear:2019 withSummPP:9 withLeavyear:2019],
-         [[PayPeriod alloc] initWithSummstartOffset:6692 withSummYear:2019 withSummPP:10 withLeavyear:2019],
-         [[PayPeriod alloc] initWithSummstartOffset:6706 withSummYear:2019 withSummPP:11 withLeavyear:2019],
-         [[PayPeriod alloc] initWithSummstartOffset:6720 withSummYear:2019 withSummPP:12 withLeavyear:2019],
-         [[PayPeriod alloc] initWithSummstartOffset:6734 withSummYear:2019 withSummPP:13 withLeavyear:2019],
-         [[PayPeriod alloc] initWithSummstartOffset:6748 withSummYear:2019 withSummPP:14 withLeavyear:2019],
-         [[PayPeriod alloc] initWithSummstartOffset:6762 withSummYear:2019 withSummPP:15 withLeavyear:2019],
-         [[PayPeriod alloc] initWithSummstartOffset:6776 withSummYear:2019 withSummPP:16 withLeavyear:2019],
-         [[PayPeriod alloc] initWithSummstartOffset:6790 withSummYear:2019 withSummPP:17 withLeavyear:2019],
-         [[PayPeriod alloc] initWithSummstartOffset:6804 withSummYear:2019 withSummPP:18 withLeavyear:2019],
-         [[PayPeriod alloc] initWithSummstartOffset:6818 withSummYear:2019 withSummPP:19 withLeavyear:2019],
-         [[PayPeriod alloc] initWithSummstartOffset:6832 withSummYear:2019 withSummPP:20 withLeavyear:2019],
-         [[PayPeriod alloc] initWithSummstartOffset:6846 withSummYear:2019 withSummPP:21 withLeavyear:2019],
-         [[PayPeriod alloc] initWithSummstartOffset:6860 withSummYear:2019 withSummPP:22 withLeavyear:2019],
-         [[PayPeriod alloc] initWithSummstartOffset:6874 withSummYear:2019 withSummPP:23 withLeavyear:2019],
-         [[PayPeriod alloc] initWithSummstartOffset:6888 withSummYear:2019 withSummPP:24 withLeavyear:2019],
-         [[PayPeriod alloc] initWithSummstartOffset:6902 withSummYear:2019 withSummPP:25 withLeavyear:2019],
-         [[PayPeriod alloc] initWithSummstartOffset:6916 withSummYear:2019 withSummPP:26 withLeavyear:2019],
-         [[PayPeriod alloc] initWithSummstartOffset:6930 withSummYear:2020 withSummPP:1 withLeavyear:2019],
-         [[PayPeriod alloc] initWithSummstartOffset:6944 withSummYear:2020 withSummPP:2 withLeavyear:2020],
-         [[PayPeriod alloc] initWithSummstartOffset:6958 withSummYear:2020 withSummPP:3 withLeavyear:2020],
-         [[PayPeriod alloc] initWithSummstartOffset:6972 withSummYear:2020 withSummPP:4 withLeavyear:2020],
-         [[PayPeriod alloc] initWithSummstartOffset:6986 withSummYear:2020 withSummPP:5 withLeavyear:2020],
-         [[PayPeriod alloc] initWithSummstartOffset:7000 withSummYear:2020 withSummPP:6 withLeavyear:2020],
-         [[PayPeriod alloc] initWithSummstartOffset:7014 withSummYear:2020 withSummPP:7 withLeavyear:2020],
-         [[PayPeriod alloc] initWithSummstartOffset:7028 withSummYear:2020 withSummPP:8 withLeavyear:2020],
-         [[PayPeriod alloc] initWithSummstartOffset:7042 withSummYear:2020 withSummPP:9 withLeavyear:2020],
-         [[PayPeriod alloc] initWithSummstartOffset:7056 withSummYear:2020 withSummPP:10 withLeavyear:2020],
-         [[PayPeriod alloc] initWithSummstartOffset:7070 withSummYear:2020 withSummPP:11 withLeavyear:2020],
-         [[PayPeriod alloc] initWithSummstartOffset:7084 withSummYear:2020 withSummPP:12 withLeavyear:2020],
-         [[PayPeriod alloc] initWithSummstartOffset:7098 withSummYear:2020 withSummPP:13 withLeavyear:2020],
-         [[PayPeriod alloc] initWithSummstartOffset:7112 withSummYear:2020 withSummPP:14 withLeavyear:2020],
-         [[PayPeriod alloc] initWithSummstartOffset:7126 withSummYear:2020 withSummPP:15 withLeavyear:2020],
-         [[PayPeriod alloc] initWithSummstartOffset:7140 withSummYear:2020 withSummPP:16 withLeavyear:2020],
-         [[PayPeriod alloc] initWithSummstartOffset:7154 withSummYear:2020 withSummPP:17 withLeavyear:2020],
-         [[PayPeriod alloc] initWithSummstartOffset:7168 withSummYear:2020 withSummPP:18 withLeavyear:2020],
-         [[PayPeriod alloc] initWithSummstartOffset:7182 withSummYear:2020 withSummPP:19 withLeavyear:2020],
-         [[PayPeriod alloc] initWithSummstartOffset:7196 withSummYear:2020 withSummPP:20 withLeavyear:2020],
-         [[PayPeriod alloc] initWithSummstartOffset:7210 withSummYear:2020 withSummPP:21 withLeavyear:2020],
-         [[PayPeriod alloc] initWithSummstartOffset:7224 withSummYear:2020 withSummPP:22 withLeavyear:2020],
-         [[PayPeriod alloc] initWithSummstartOffset:7238 withSummYear:2020 withSummPP:23 withLeavyear:2020],
-         [[PayPeriod alloc] initWithSummstartOffset:7252 withSummYear:2020 withSummPP:24 withLeavyear:2020],
-         [[PayPeriod alloc] initWithSummstartOffset:7266 withSummYear:2020 withSummPP:25 withLeavyear:2020],
-         [[PayPeriod alloc] initWithSummstartOffset:7280 withSummYear:2020 withSummPP:26 withLeavyear:2020],
+    [NSArray arrayWithObjects:
+     [[PayPeriod alloc] initWithSummstartOffset:5823 withSummYear:2017 withSummPP:1 withLeavyear:2016],
+     [[PayPeriod alloc] initWithSummstartOffset:5837 withSummYear:2017 withSummPP:2 withLeavyear:2016],
+     [[PayPeriod alloc] initWithSummstartOffset:5851 withSummYear:2017 withSummPP:3 withLeavyear:2017],
+     [[PayPeriod alloc] initWithSummstartOffset:5865 withSummYear:2017 withSummPP:4 withLeavyear:2017],
+     [[PayPeriod alloc] initWithSummstartOffset:5879 withSummYear:2017 withSummPP:5 withLeavyear:2017],
+     [[PayPeriod alloc] initWithSummstartOffset:5893 withSummYear:2017 withSummPP:6 withLeavyear:2017],
+     [[PayPeriod alloc] initWithSummstartOffset:5907 withSummYear:2017 withSummPP:7 withLeavyear:2017],
+     [[PayPeriod alloc] initWithSummstartOffset:5921 withSummYear:2017 withSummPP:8 withLeavyear:2017],
+     [[PayPeriod alloc] initWithSummstartOffset:5935 withSummYear:2017 withSummPP:9 withLeavyear:2017],
+     [[PayPeriod alloc] initWithSummstartOffset:5949 withSummYear:2017 withSummPP:10 withLeavyear:2017],
+     [[PayPeriod alloc] initWithSummstartOffset:5963 withSummYear:2017 withSummPP:11 withLeavyear:2017],
+     [[PayPeriod alloc] initWithSummstartOffset:5977 withSummYear:2017 withSummPP:12 withLeavyear:2017],
+     [[PayPeriod alloc] initWithSummstartOffset:5991 withSummYear:2017 withSummPP:13 withLeavyear:2017],
+     [[PayPeriod alloc] initWithSummstartOffset:6005 withSummYear:2017 withSummPP:14 withLeavyear:2017],
+     [[PayPeriod alloc] initWithSummstartOffset:6019 withSummYear:2017 withSummPP:15 withLeavyear:2017],
+     [[PayPeriod alloc] initWithSummstartOffset:6033 withSummYear:2017 withSummPP:16 withLeavyear:2017],
+     [[PayPeriod alloc] initWithSummstartOffset:6047 withSummYear:2017 withSummPP:17 withLeavyear:2017],
+     [[PayPeriod alloc] initWithSummstartOffset:6061 withSummYear:2017 withSummPP:18 withLeavyear:2017],
+     [[PayPeriod alloc] initWithSummstartOffset:6075 withSummYear:2017 withSummPP:19 withLeavyear:2017],
+     [[PayPeriod alloc] initWithSummstartOffset:6089 withSummYear:2017 withSummPP:20 withLeavyear:2017],
+     [[PayPeriod alloc] initWithSummstartOffset:6103 withSummYear:2017 withSummPP:21 withLeavyear:2017],
+     [[PayPeriod alloc] initWithSummstartOffset:6117 withSummYear:2017 withSummPP:22 withLeavyear:2017],
+     [[PayPeriod alloc] initWithSummstartOffset:6131 withSummYear:2017 withSummPP:23 withLeavyear:2017],
+     [[PayPeriod alloc] initWithSummstartOffset:6145 withSummYear:2017 withSummPP:24 withLeavyear:2017],
+     [[PayPeriod alloc] initWithSummstartOffset:6159 withSummYear:2017 withSummPP:25 withLeavyear:2017],
+     [[PayPeriod alloc] initWithSummstartOffset:6173 withSummYear:2017 withSummPP:26 withLeavyear:2017],
+     [[PayPeriod alloc] initWithSummstartOffset:6187 withSummYear:2018 withSummPP:1 withLeavyear:2017],
+     [[PayPeriod alloc] initWithSummstartOffset:6201 withSummYear:2018 withSummPP:2 withLeavyear:2017],
+     [[PayPeriod alloc] initWithSummstartOffset:6215 withSummYear:2018 withSummPP:3 withLeavyear:2018],
+     [[PayPeriod alloc] initWithSummstartOffset:6229 withSummYear:2018 withSummPP:4 withLeavyear:2018],
+     [[PayPeriod alloc] initWithSummstartOffset:6243 withSummYear:2018 withSummPP:5 withLeavyear:2018],
+     [[PayPeriod alloc] initWithSummstartOffset:6257 withSummYear:2018 withSummPP:6 withLeavyear:2018],
+     [[PayPeriod alloc] initWithSummstartOffset:6271 withSummYear:2018 withSummPP:7 withLeavyear:2018],
+     [[PayPeriod alloc] initWithSummstartOffset:6285 withSummYear:2018 withSummPP:8 withLeavyear:2018],
+     [[PayPeriod alloc] initWithSummstartOffset:6299 withSummYear:2018 withSummPP:9 withLeavyear:2018],
+     [[PayPeriod alloc] initWithSummstartOffset:6313 withSummYear:2018 withSummPP:10 withLeavyear:2018],
+     [[PayPeriod alloc] initWithSummstartOffset:6327 withSummYear:2018 withSummPP:11 withLeavyear:2018],
+     [[PayPeriod alloc] initWithSummstartOffset:6341 withSummYear:2018 withSummPP:12 withLeavyear:2018],
+     [[PayPeriod alloc] initWithSummstartOffset:6355 withSummYear:2018 withSummPP:13 withLeavyear:2018],
+     [[PayPeriod alloc] initWithSummstartOffset:6369 withSummYear:2018 withSummPP:14 withLeavyear:2018],
+     [[PayPeriod alloc] initWithSummstartOffset:6383 withSummYear:2018 withSummPP:15 withLeavyear:2018],
+     [[PayPeriod alloc] initWithSummstartOffset:6397 withSummYear:2018 withSummPP:16 withLeavyear:2018],
+     [[PayPeriod alloc] initWithSummstartOffset:6411 withSummYear:2018 withSummPP:17 withLeavyear:2018],
+     [[PayPeriod alloc] initWithSummstartOffset:6425 withSummYear:2018 withSummPP:18 withLeavyear:2018],
+     [[PayPeriod alloc] initWithSummstartOffset:6439 withSummYear:2018 withSummPP:19 withLeavyear:2018],
+     [[PayPeriod alloc] initWithSummstartOffset:6453 withSummYear:2018 withSummPP:20 withLeavyear:2018],
+     [[PayPeriod alloc] initWithSummstartOffset:6467 withSummYear:2018 withSummPP:21 withLeavyear:2018],
+     [[PayPeriod alloc] initWithSummstartOffset:6481 withSummYear:2018 withSummPP:22 withLeavyear:2018],
+     [[PayPeriod alloc] initWithSummstartOffset:6495 withSummYear:2018 withSummPP:23 withLeavyear:2018],
+     [[PayPeriod alloc] initWithSummstartOffset:6509 withSummYear:2018 withSummPP:24 withLeavyear:2018],
+     [[PayPeriod alloc] initWithSummstartOffset:6523 withSummYear:2018 withSummPP:25 withLeavyear:2018],
+     [[PayPeriod alloc] initWithSummstartOffset:6537 withSummYear:2018 withSummPP:26 withLeavyear:2018],
+     [[PayPeriod alloc] initWithSummstartOffset:6551 withSummYear:2018 withSummPP:27 withLeavyear:2018],
+     [[PayPeriod alloc] initWithSummstartOffset:6565 withSummYear:2019 withSummPP:1 withLeavyear:2018],
+     [[PayPeriod alloc] initWithSummstartOffset:6579 withSummYear:2019 withSummPP:2 withLeavyear:2019],
+     [[PayPeriod alloc] initWithSummstartOffset:6593 withSummYear:2019 withSummPP:3 withLeavyear:2019],
+     [[PayPeriod alloc] initWithSummstartOffset:6607 withSummYear:2019 withSummPP:4 withLeavyear:2019],
+     [[PayPeriod alloc] initWithSummstartOffset:6621 withSummYear:2019 withSummPP:5 withLeavyear:2019],
+     [[PayPeriod alloc] initWithSummstartOffset:6635 withSummYear:2019 withSummPP:6 withLeavyear:2019],
+     [[PayPeriod alloc] initWithSummstartOffset:6649 withSummYear:2019 withSummPP:7 withLeavyear:2019],
+     [[PayPeriod alloc] initWithSummstartOffset:6663 withSummYear:2019 withSummPP:8 withLeavyear:2019],
+     [[PayPeriod alloc] initWithSummstartOffset:6677 withSummYear:2019 withSummPP:9 withLeavyear:2019],
+     [[PayPeriod alloc] initWithSummstartOffset:6691 withSummYear:2019 withSummPP:10 withLeavyear:2019],
+     [[PayPeriod alloc] initWithSummstartOffset:6705 withSummYear:2019 withSummPP:11 withLeavyear:2019],
+     [[PayPeriod alloc] initWithSummstartOffset:6719 withSummYear:2019 withSummPP:12 withLeavyear:2019],
+     [[PayPeriod alloc] initWithSummstartOffset:6733 withSummYear:2019 withSummPP:13 withLeavyear:2019],
+     [[PayPeriod alloc] initWithSummstartOffset:6747 withSummYear:2019 withSummPP:14 withLeavyear:2019],
+     [[PayPeriod alloc] initWithSummstartOffset:6761 withSummYear:2019 withSummPP:15 withLeavyear:2019],
+     [[PayPeriod alloc] initWithSummstartOffset:6775 withSummYear:2019 withSummPP:16 withLeavyear:2019],
+     [[PayPeriod alloc] initWithSummstartOffset:6789 withSummYear:2019 withSummPP:17 withLeavyear:2019],
+     [[PayPeriod alloc] initWithSummstartOffset:6803 withSummYear:2019 withSummPP:18 withLeavyear:2019],
+     [[PayPeriod alloc] initWithSummstartOffset:6817 withSummYear:2019 withSummPP:19 withLeavyear:2019],
+     [[PayPeriod alloc] initWithSummstartOffset:6831 withSummYear:2019 withSummPP:20 withLeavyear:2019],
+     [[PayPeriod alloc] initWithSummstartOffset:6845 withSummYear:2019 withSummPP:21 withLeavyear:2019],
+     [[PayPeriod alloc] initWithSummstartOffset:6859 withSummYear:2019 withSummPP:22 withLeavyear:2019],
+     [[PayPeriod alloc] initWithSummstartOffset:6873 withSummYear:2019 withSummPP:23 withLeavyear:2019],
+     [[PayPeriod alloc] initWithSummstartOffset:6887 withSummYear:2019 withSummPP:24 withLeavyear:2019],
+     [[PayPeriod alloc] initWithSummstartOffset:6901 withSummYear:2019 withSummPP:25 withLeavyear:2019],
+     [[PayPeriod alloc] initWithSummstartOffset:6915 withSummYear:2019 withSummPP:26 withLeavyear:2019],
+     [[PayPeriod alloc] initWithSummstartOffset:6929 withSummYear:2020 withSummPP:1 withLeavyear:2019],
+     [[PayPeriod alloc] initWithSummstartOffset:6943 withSummYear:2020 withSummPP:2 withLeavyear:2020],
+     [[PayPeriod alloc] initWithSummstartOffset:6957 withSummYear:2020 withSummPP:3 withLeavyear:2020],
+     [[PayPeriod alloc] initWithSummstartOffset:6971 withSummYear:2020 withSummPP:4 withLeavyear:2020],
+     [[PayPeriod alloc] initWithSummstartOffset:6985 withSummYear:2020 withSummPP:5 withLeavyear:2020],
+     [[PayPeriod alloc] initWithSummstartOffset:6999 withSummYear:2020 withSummPP:6 withLeavyear:2020],
+     [[PayPeriod alloc] initWithSummstartOffset:7013 withSummYear:2020 withSummPP:7 withLeavyear:2020],
+     [[PayPeriod alloc] initWithSummstartOffset:7027 withSummYear:2020 withSummPP:8 withLeavyear:2020],
+     [[PayPeriod alloc] initWithSummstartOffset:7041 withSummYear:2020 withSummPP:9 withLeavyear:2020],
+     [[PayPeriod alloc] initWithSummstartOffset:7055 withSummYear:2020 withSummPP:10 withLeavyear:2020],
+     [[PayPeriod alloc] initWithSummstartOffset:7069 withSummYear:2020 withSummPP:11 withLeavyear:2020],
+     [[PayPeriod alloc] initWithSummstartOffset:7083 withSummYear:2020 withSummPP:12 withLeavyear:2020],
+     [[PayPeriod alloc] initWithSummstartOffset:7097 withSummYear:2020 withSummPP:13 withLeavyear:2020],
+     [[PayPeriod alloc] initWithSummstartOffset:7111 withSummYear:2020 withSummPP:14 withLeavyear:2020],
+     [[PayPeriod alloc] initWithSummstartOffset:7125 withSummYear:2020 withSummPP:15 withLeavyear:2020],
+     [[PayPeriod alloc] initWithSummstartOffset:7139 withSummYear:2020 withSummPP:16 withLeavyear:2020],
+     [[PayPeriod alloc] initWithSummstartOffset:7153 withSummYear:2020 withSummPP:17 withLeavyear:2020],
+     [[PayPeriod alloc] initWithSummstartOffset:7167 withSummYear:2020 withSummPP:18 withLeavyear:2020],
+     [[PayPeriod alloc] initWithSummstartOffset:7181 withSummYear:2020 withSummPP:19 withLeavyear:2020],
+     [[PayPeriod alloc] initWithSummstartOffset:7195 withSummYear:2020 withSummPP:20 withLeavyear:2020],
+     [[PayPeriod alloc] initWithSummstartOffset:7209 withSummYear:2020 withSummPP:21 withLeavyear:2020],
+     [[PayPeriod alloc] initWithSummstartOffset:7223 withSummYear:2020 withSummPP:22 withLeavyear:2020],
+     [[PayPeriod alloc] initWithSummstartOffset:7237 withSummYear:2020 withSummPP:23 withLeavyear:2020],
+     [[PayPeriod alloc] initWithSummstartOffset:7251 withSummYear:2020 withSummPP:24 withLeavyear:2020],
+     [[PayPeriod alloc] initWithSummstartOffset:7265 withSummYear:2020 withSummPP:25 withLeavyear:2020],
+     [[PayPeriod alloc] initWithSummstartOffset:7279 withSummYear:2020 withSummPP:26 withLeavyear:2020],
          nil];
+    
+    for (PayPeriod*pp in self.payperiodsArray) {
+        pp.summstartOffset += 28;
+    }
+    
     return self;
 }
 
@@ -166,9 +169,7 @@ static DataRetriever* _sharedDataRetriever = nil;
     //Convert offset from seconds to days
     offsetToday = offsetToday/ (60*60*24);
     
-    offsetToday -= 13;
-    
-    NSLog(@"the offsetToday (with 14 days substracted) is %ld",(long)offsetToday);
+    NSLog(@"the offsetToday (with 1 day substracted) is %ld",(long)offsetToday);
     [self setText:@"***"];
     [self setShortText:@"**"];
     
@@ -181,12 +182,23 @@ static DataRetriever* _sharedDataRetriever = nil;
 
             NSLog(@"Matched %@", pptitle);
             
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            [formatter setDateFormat:@"dd-MM-yyyy HH:mm"];
+            
+            NSDate *currentDate = [NSDate date];
+            NSString *dateString = [formatter stringFromDate:[pp startDate]];
+            
+            NSLog(@"PP start date is %@" , dateString);
+            
+            dateString =[formatter stringFromDate:currentDate];
+            NSLog(@"Current date is %@" , dateString);
+            
             [self setPayperiodText:pptitle];
             
             NSString *shortPP;
             shortPP = [NSString stringWithFormat:@"%ld-%ld",(long)pp.summYear, (long)pp.summPP];
 
-            NSUInteger unitFlags = NSCalendarUnitDay;
+            NSUInteger unitFlags = NSCalendarUnitHour;
             NSCalendar *gregorian = [[NSCalendar alloc]
                                      initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
             NSDateComponents *components = [gregorian components:unitFlags
@@ -195,7 +207,20 @@ static DataRetriever* _sharedDataRetriever = nil;
             NSInteger week;
             NSInteger dayOffset = components.day;
             
+            NSInteger hourOffset = components.hour;
+            NSLog(@"hourOffset is %li",(long)hourOffset);
+
+            if (hourOffset<0)
+                hourOffset+=(24*14);
             
+            hourOffset-= 9;
+            
+            dayOffset = hourOffset/24;
+            
+            if (dayOffset<0)
+                dayOffset +=14;
+            dayOffset+=1;
+
             if (dayOffset>6)
                 week=2;
             else
@@ -207,15 +232,27 @@ static DataRetriever* _sharedDataRetriever = nil;
              01234567890123
              SMTWTFSSMTWTFS
             */
-            if (dayOffset==2) {
+            NSString*theText;
+            
+            if (dayOffset==4) {
                 [self setBackgroundColor:[UIColor redColor]];
                 [self setTextColor:[UIColor whiteColor]];
-            } else if (dayOffset<2 || dayOffset>10) {
+                theText = [NSString stringWithFormat:@"WK%li!",
+                           (long)week];
+
+            } else if (dayOffset<4 || dayOffset>10) {
                 [self setBackgroundColor:[UIColor orangeColor]];
                 [self setTextColor:[UIColor whiteColor]];
+                
+                theText = [NSString stringWithFormat:@"WK%li*",
+                           (long)week];
+
             } else {
                 [self setBackgroundColor:[UIColor blueColor]];
                 [self setTextColor:[UIColor whiteColor]];
+                theText = [NSString stringWithFormat:@"WK%li",
+                           (long)week];
+
             }
             
             NSDateFormatter* day = [[NSDateFormatter alloc] init];
@@ -231,13 +268,8 @@ static DataRetriever* _sharedDataRetriever = nil;
             NSString *shortDay = [day stringFromDate:[NSDate date]];
             NSLog(@"the short day is: %@", shortDay);
             
-            NSString*theText = [NSString stringWithFormat:@"WEEK %li",
-                                (long)week];
             NSLog(@"theText %@",theText);
             [self setText:theText];
-            
-            theText = [NSString stringWithFormat:@"WK%li",
-                       (long)week];
 
             [self setShortText:theText];
             break;

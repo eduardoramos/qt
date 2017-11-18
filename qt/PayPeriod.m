@@ -31,9 +31,15 @@
 }
 
 -(NSDate*) startDate{
-    NSTimeInterval interval = self.summstartOffset*24*60*60;
+    NSTimeInterval interval = (self.summstartOffset+1)*24*60*60;
+    
     NSDate* sd = [NSDate dateWithTimeIntervalSinceReferenceDate:interval];
-    return sd;
+    
+    NSTimeInterval timeZoneOffset = [[NSTimeZone defaultTimeZone] secondsFromGMT]; // You could also use the systemTimeZone method
+    NSTimeInterval gmtTimeInterval = [sd timeIntervalSinceReferenceDate] + timeZoneOffset;
+    NSDate *localDate = [NSDate dateWithTimeIntervalSinceReferenceDate:gmtTimeInterval];
+    
+    return localDate;
 }
 
 @end
