@@ -221,7 +221,7 @@ static DataRetriever* _sharedDataRetriever = nil;
                 dayOffset +=14;
             dayOffset+=1;
 
-            if (dayOffset>6)
+            if (dayOffset>7)
                 week=2;
             else
                 week=1;
