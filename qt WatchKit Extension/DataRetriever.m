@@ -44,37 +44,11 @@ static DataRetriever* _sharedDataRetriever = nil;
      '[[PayPeriod alloc] initWithSummstartOffset:'||to_char(p.summstart-to_date('01-JAN-2001'))
      || ' withSummYear:'||summyear||' withSummPP:'||summpp||' withLeavyear:'|| leavyear|| '],'
      from ppsumm p
-     where summyear>=2017;
+     where summyear>=2018;
      */
     
     self.payperiodsArray =
     [NSArray arrayWithObjects:
-     [[PayPeriod alloc] initWithSummstartOffset:5823 withSummYear:2017 withSummPP:1 withLeavyear:2016],
-     [[PayPeriod alloc] initWithSummstartOffset:5837 withSummYear:2017 withSummPP:2 withLeavyear:2016],
-     [[PayPeriod alloc] initWithSummstartOffset:5851 withSummYear:2017 withSummPP:3 withLeavyear:2017],
-     [[PayPeriod alloc] initWithSummstartOffset:5865 withSummYear:2017 withSummPP:4 withLeavyear:2017],
-     [[PayPeriod alloc] initWithSummstartOffset:5879 withSummYear:2017 withSummPP:5 withLeavyear:2017],
-     [[PayPeriod alloc] initWithSummstartOffset:5893 withSummYear:2017 withSummPP:6 withLeavyear:2017],
-     [[PayPeriod alloc] initWithSummstartOffset:5907 withSummYear:2017 withSummPP:7 withLeavyear:2017],
-     [[PayPeriod alloc] initWithSummstartOffset:5921 withSummYear:2017 withSummPP:8 withLeavyear:2017],
-     [[PayPeriod alloc] initWithSummstartOffset:5935 withSummYear:2017 withSummPP:9 withLeavyear:2017],
-     [[PayPeriod alloc] initWithSummstartOffset:5949 withSummYear:2017 withSummPP:10 withLeavyear:2017],
-     [[PayPeriod alloc] initWithSummstartOffset:5963 withSummYear:2017 withSummPP:11 withLeavyear:2017],
-     [[PayPeriod alloc] initWithSummstartOffset:5977 withSummYear:2017 withSummPP:12 withLeavyear:2017],
-     [[PayPeriod alloc] initWithSummstartOffset:5991 withSummYear:2017 withSummPP:13 withLeavyear:2017],
-     [[PayPeriod alloc] initWithSummstartOffset:6005 withSummYear:2017 withSummPP:14 withLeavyear:2017],
-     [[PayPeriod alloc] initWithSummstartOffset:6019 withSummYear:2017 withSummPP:15 withLeavyear:2017],
-     [[PayPeriod alloc] initWithSummstartOffset:6033 withSummYear:2017 withSummPP:16 withLeavyear:2017],
-     [[PayPeriod alloc] initWithSummstartOffset:6047 withSummYear:2017 withSummPP:17 withLeavyear:2017],
-     [[PayPeriod alloc] initWithSummstartOffset:6061 withSummYear:2017 withSummPP:18 withLeavyear:2017],
-     [[PayPeriod alloc] initWithSummstartOffset:6075 withSummYear:2017 withSummPP:19 withLeavyear:2017],
-     [[PayPeriod alloc] initWithSummstartOffset:6089 withSummYear:2017 withSummPP:20 withLeavyear:2017],
-     [[PayPeriod alloc] initWithSummstartOffset:6103 withSummYear:2017 withSummPP:21 withLeavyear:2017],
-     [[PayPeriod alloc] initWithSummstartOffset:6117 withSummYear:2017 withSummPP:22 withLeavyear:2017],
-     [[PayPeriod alloc] initWithSummstartOffset:6131 withSummYear:2017 withSummPP:23 withLeavyear:2017],
-     [[PayPeriod alloc] initWithSummstartOffset:6145 withSummYear:2017 withSummPP:24 withLeavyear:2017],
-     [[PayPeriod alloc] initWithSummstartOffset:6159 withSummYear:2017 withSummPP:25 withLeavyear:2017],
-     [[PayPeriod alloc] initWithSummstartOffset:6173 withSummYear:2017 withSummPP:26 withLeavyear:2017],
      [[PayPeriod alloc] initWithSummstartOffset:6187 withSummYear:2018 withSummPP:1 withLeavyear:2017],
      [[PayPeriod alloc] initWithSummstartOffset:6201 withSummYear:2018 withSummPP:2 withLeavyear:2017],
      [[PayPeriod alloc] initWithSummstartOffset:6215 withSummYear:2018 withSummPP:3 withLeavyear:2018],
@@ -157,7 +131,7 @@ static DataRetriever* _sharedDataRetriever = nil;
          nil];
     
     for (PayPeriod*pp in self.payperiodsArray) {
-        pp.summstartOffset += 28;
+        pp.summstartOffset += 14;
     }
     
     return self;
