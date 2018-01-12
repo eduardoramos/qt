@@ -189,7 +189,7 @@ static DataRetriever* _sharedDataRetriever = nil;
             
             hourOffset-= 9;
             
-            dayOffset = hourOffset/24;
+            dayOffset = floor(hourOffset/24);
             
             if (dayOffset<0)
                 dayOffset +=14;
@@ -208,13 +208,13 @@ static DataRetriever* _sharedDataRetriever = nil;
             */
             NSString*theText;
             
-            if (dayOffset==4) {
+            if (dayOffset==3) {
                 [self setBackgroundColor:[UIColor redColor]];
                 [self setTextColor:[UIColor whiteColor]];
                 theText = [NSString stringWithFormat:@"WK%li!",
                            (long)week];
 
-            } else if (dayOffset<4 || dayOffset>10) {
+            } else if (dayOffset<3 || dayOffset>10) {
                 [self setBackgroundColor:[UIColor orangeColor]];
                 [self setTextColor:[UIColor whiteColor]];
                 
