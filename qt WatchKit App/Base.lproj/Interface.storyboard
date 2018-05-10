@@ -44,7 +44,7 @@
                                     <items>
                                         <label width="136" height="555" alignment="center" textAlignment="left" numberOfLines="52" id="D9c-3v-9O4" userLabel="Instances Label">
                                             <mutableString key="text">1534 - SOS	
-1536 - KCPA	
+1536 - JFK	
 1538 - USGS	
 1540 - BSE	
 1542 - TIB	
@@ -68,7 +68,7 @@
 1578 - BEM	
 1580 - NARA	
 1582 - SSS	
-1584 - IMLS	
+1584 - IMLS 1586 - ADF
 2044 - Parallel	
 2048 - BIA	
 0002 - NxtRel Test
